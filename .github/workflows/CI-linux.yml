@@ -23,7 +23,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: [3.8, 3.9, '3.10', '3.11', '3.12', '3.13']
+        python-version: [3.9, '3.10', '3.11', '3.12', '3.13']
         mumps-version: [ 5.7.0, 5.7.1, 5.7.2, 5.7.3 ] 
         #5.4.0 is not available
 
