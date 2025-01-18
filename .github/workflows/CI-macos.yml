@@ -86,7 +86,8 @@ jobs:
     
     - name: Install Python packages
       run: |
-        export export LIBRARY_PATH=/usr/local:$LIBRARY_PATH
+        export LIBRARY_PATH=${BASE_DATA_PYTHON}/lib
+        export C_INCLUDE_PATH=${BASE_DATA_PYTHON}/include
         pip install -r requirements.txt
     - name: Run script 
       run: |  
