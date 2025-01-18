@@ -62,6 +62,8 @@ with open('dataMatTest.pck','rb') as f:
 A = data['A']
 b = data['b']
 
+print('Matrix size {}'.format(A.shape))
+
 ## test scipy
 @print_durations()
 @profileit("scipy_profile")
