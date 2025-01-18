@@ -13,7 +13,12 @@ prefix must be adapted especillay in the case of use of Python's environement (u
 
 ## install python packages
 
+    export LIBRARY_PATH=XXXX/envs/YYY/lib
+    export C_INCLUDE_PATH=XXXX/envs/YYY/include
+
     pip install -r requirements.txt
+
+The two first lines are set to delcare the location of mumps compiled libraries.
 
 ## run script
 
