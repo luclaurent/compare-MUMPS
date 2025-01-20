@@ -9,7 +9,7 @@ import scipy.sparse as sp
 import mumpspy
 import pymumps
 from mumps import mumps
-import pypardiso
+# import pypardiso 
 # import time
 
 from funcy import print_durations
@@ -101,18 +101,18 @@ def run_pythonmumps():
     inst.factor(A)
     sol = inst.solve(b)
 
-## test pardiso
-@print_durations()
-@profileit("pardiso_profile")
-def run_pardiso():  
-    sol = pypardiso.spsolve(A,b)
+# ## test pardiso
+# @print_durations()
+# @profileit("pardiso_profile")
+# def run_pardiso():  
+#     sol = pypardiso.spsolve(A,b)
 
 
 run_scipy()
 run_mumpspy()
 run_pymumps()
 run_pythonmumps()
-run_pardiso()
+# run_pardiso()
 
 nb = 1e4
 
@@ -125,4 +125,4 @@ run_scipy()
 run_mumpspy()
 run_pymumps()
 run_pythonmumps()
-run_pardiso()
+# run_pardiso()
