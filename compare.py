@@ -4,10 +4,12 @@ os.environ['NUMEXPR_NUM_THREADS']="1"
 os.environ['OMP_NUM_THREADS']="1"
 
 import pickle
+import numpy
 import scipy.sparse as sp
 import mumpspy
 import pymumps
 from mumps import mumps
+import pypardiso
 # import time
 
 from funcy import print_durations
@@ -99,7 +101,28 @@ def run_pythonmumps():
     inst.factor(A)
     sol = inst.solve(b)
 
+## test pardiso
+@print_durations()
+@profileit("pardiso_profile")
+def run_pardiso():  
+    sol = pypardiso.spsolve(A,b)
+
+
 run_scipy()
 run_mumpspy()
 run_pymumps()
 run_pythonmumps()
+run_pardiso()
+
+nb = 1e4
+
+A = sp.rand(nb,nb,density=0.25, format='csr')
+b = numpy.random.rand(int(nb))
+
+print('Matrix size {}'.format(A.shape))
+
+run_scipy()
+run_mumpspy()
+run_pymumps()
+run_pythonmumps()
+run_pardiso()
