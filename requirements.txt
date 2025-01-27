@@ -1,6 +1,7 @@
 numpy
 scipy
 funcy
+pandas
 https://gitlab.kwant-project.org/kwant/python-mumps/-/archive/main/python-mumps-main.zip
 https://github.com/luclaurent/mumpspy/archive/refs/heads/improvements.zip
 https://github.com/luclaurent/pymumps/archive/refs/heads/devel.zip
